@@ -11,12 +11,11 @@
                                 </h4>
                                 <p style="color:#FFF" ><?php echo $food['keterangan']?></p>
                                 <p style="color:#FFF" >Waktu saji : <?php echo $food['time']?></p> 
+                                <input style="width:20%" type="number" name="porsi" min="0" /> <p style="color:#FFF">Porsi</p>
                                 <?php 
                                     $nama=$food['nama'];
                                     $bayar=$food['harga']*$porsi;
                                  ?> 
-                                 <input style="width:20%" type="number" name="porsi" min="0" /> <p style="color:#FFF">Porsi</p>
-                                 </form>
                             </div>
                            
                         </div>
