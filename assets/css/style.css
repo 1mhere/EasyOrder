@@ -1,0 +1,36 @@
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: right;
+  width: 25%;
+  height: 20%;
+  cursor: pointer;
+  margin: 0 auto;
+  border: .5px solid rgb(38, 169, 245);
+  -webkit-border-radius: 40px;
+  border-radius: 15px;
+  font: normal 13px/26px "Domine Font Family", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  align:right;
+  background: rgb(38, 169, 245);
+  text-decoration: none;
+}
+
+.enjoy-css a {
+  color : #fff;
+  }
+
+  .navbar-inverse {
+    background-color: #FFF;
+    border-color: #FFF;
+}
+
+.bg{
+  background-color: white;
+  color : red;
+}
