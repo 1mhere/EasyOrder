@@ -11,8 +11,12 @@
                                 </h4>
                                 <p style="color:#FFF" ><?php echo $food['keterangan']?></p>
                                 <p style="color:#FFF" >Waktu saji : <?php echo $food['time']?></p> 
-                                 <input style="width:20%" type="number" name="porsi_Nasgor" min="0" /> <p style="color:#FFF">Porsi</p>
-                                 
+                                <?php 
+                                    $nama=$food['nama'];
+                                    $bayar=$food['harga']*$porsi;
+                                 ?> 
+                                 <input style="width:20%" type="number" name="porsi" min="0" /> <p style="color:#FFF">Porsi</p>
+                                 </form>
                             </div>
                            
                         </div>
@@ -42,7 +46,7 @@
 
                     <div class="modal-footer">
                       <button type="submit" class="btn btn-default" data-dismiss="modal" onmouseover="tidak();">Tidak</button>
-                      <button type="submit" style="background-color: #F22C1F; border-color: #FF473A;" class="btn btn-primary" onmouseover="ya();">Ya</button>
+                      <button type="submit" style="background-color: #F22C1F; border-color: #FF473A;" class="btn btn-primary" name="btnSubmit" onmouseover="ya();">Ya</button>
                     </div>
                   </div>
                 </div>

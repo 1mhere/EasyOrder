@@ -3,13 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include_once (dirname(__FILE__) . "/Main.php");
 
 class Admin extends Main {
-	
-	/**
-		* @Author				: Localhost {Ferdhika Yudira}
-		* @Email				: fer@dika.web.id
-		* @Web					: http://dika.web.id
-		* @Date					: 2016-04-08 13:12:19
-	**/
 
 	function __construct(){
 		parent::__construct();

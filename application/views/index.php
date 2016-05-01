@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>1nspire Easy Order</title>
+    <title>1nspire | Easy Order</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url("assets/css/bootstrap.min.css");?>" rel="stylesheet">
@@ -48,17 +48,6 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <!-- <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul> -->
           <div style="margin-top:10px;text-align:right;">
           <a href="#" data-toggle="modal" data-target= "#modalProg" onclick="hasil();">
               <i  aria-haspopup="true" aria-expanded="false" style="color:#E1F438; font-size:30px;"  class="fa fa-spinner"></i>
@@ -142,11 +131,11 @@
                   <?php
                   $pulsa = 1000000;
                   @$jumlah_tempe = $_GET['porsi'];
-                  @$jumlah_opor = $_GET['porsi_opor'];
-                  @$jumlah_Nasgor = $_GET['porsi_Nasgor'];
-                  @$jumlah_Baso = $_GET['porsi_Baso'];
-                  @$jumlah_Jamur = $_GET['porsi_Jamur'];
-                  @$jumlah_Kikil = $_GET['porsi_Kikil'];
+                  @$jumlah_opor = $_GET['porsi'];
+                  @$jumlah_Nasgor = $_GET['porsi'];
+                  @$jumlah_Baso = $_GET['porsi'];
+                  @$jumlah_Jamur = $_GET['porsi'];
+                  @$jumlah_Kikil = $_GET['porsi'];
                    ?>
                   
                   
@@ -286,7 +275,7 @@ $('#klos').on('click', function(){
         <div class="modal-footer">
           <form action="homepage.php">
             <button type="submit" data-dismiss="modal" class="btn btn-default">CANCEL</button>
-            <button style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"type="button" class="btn btn-primary"  data-dismiss="modal" data-target= "#notif" >Order</button>
+            <button style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"type="button" class="btn btn-primary"  data-dismiss="modal" data-target= "#notif" ?>" >Order</button>
           </form>
         </div>
       </div>

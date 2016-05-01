@@ -85,5 +85,20 @@ class Crud extends CI_Controller {
 			redirect('crud/index');
 		}
 	}
+
+	public function order(){
+		$data_insert = array(
+				'meja' => 1,
+				'nama' => $nama,
+				'jumlah' => $porsi,
+				'bayar' => $bayar,
+				
+			);
+		$res = $this->mymodel->InsertData('order',$data_insert);
+		if($res>=1){
+			$this->session->set_flashdata('pesan','Tambah data sukses');
+			redirect('web/index');
+		}
+	}
 }
  
