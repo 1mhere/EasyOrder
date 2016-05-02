@@ -2,10 +2,10 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /adminlte_ci
+    RewriteBase /easyorder
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ //easyorder/index.php/$1 [L]
+    RewriteRule ^(.*)$ //easyorder/index.php?/$1 [L]
 </IfModule>
 <IfModule !mod_rewrite.c>
     ErrorDocument 404 //easyorder/index.php

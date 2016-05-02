@@ -275,7 +275,7 @@ $('#klos').on('click', function(){
         <div class="modal-footer">
           <form action="homepage.php">
             <button type="submit" data-dismiss="modal" class="btn btn-default">CANCEL</button>
-            <button style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"type="button" class="btn btn-primary"  data-dismiss="modal" data-target= "#notif" ?>" >Order</button>
+            <button style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"type="button" class="btn btn-primary"  data-dismiss="modal" data-target= "#notif" ?>Order</button>
           </form>
         </div>
       </div>
