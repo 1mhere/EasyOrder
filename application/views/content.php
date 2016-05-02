@@ -17,14 +17,14 @@
                                     // $bayar=$food['harga']*$porsi;
                                  ?>  -->
                             </div>
-                           
+                                   <center>
+                                        <button  style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"class="btn btn-primary btn-lg" type="button" class="enjoy-css"  data-toggle="modal" data-target= "#modalOrder" aria-haspopup="true" aria-expanded="false" onclick="addtocart();"> Add To Cart </button>
+                                  </center>
                         </div>
                     </div>
       <?php } ?>
   </div>
-                   <center>
-                    <button  style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"class="btn btn-primary btn-lg" type="button" class="enjoy-css"  data-toggle="modal" data-target= "#modalOrder" aria-haspopup="true" aria-expanded="false" onclick="addtocart();"> Add To Cart </button>
-                    </center>
+                  
   
     
     <div class="modal fade bs-example-modal-lg" data-backdrop="" id="modalOrder" tabindex="-1" role="dialog" aria-labelledby="labelKategori">
