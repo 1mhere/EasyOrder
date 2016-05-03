@@ -129,12 +129,6 @@
                 <!-- Default panel contents -->
                   <div style="background-color: #F22C1F; border-color: #FF473A;" class="panel-heading"><h4 style="color: #E1F438;">Summary</h4></div>
                   <?php
-                  $pulsa = 1000000;
-                  @$jumlah_tempe = $_GET['porsi'];
-                  @$jumlah_opor = $_GET['porsi'];
-                  @$jumlah_Nasgor = $_GET['porsi'];
-                  @$jumlah_Baso = $_GET['porsi'];
-                  @$jumlah_Jamur = $_GET['porsi'];
                   @$jumlah_Kikil = $_GET['porsi'];
                    ?>
                   
@@ -143,26 +137,7 @@
                   <table class="table">
                   
                      <tr><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Harga@(Rp)</b></td><td><b>Subtotal(Rp)</b></td></tr>
-                     <?php 
-                     if(isset($jumlah_Nasgor)&&$jumlah_Nasgor!=""&&$jumlah_Nasgor!=0)
-                     {
-                    echo "<tr><td>Nasi Goreng</td><td> $jumlah_Nasgor </td><td>10000</td><td>"; echo ($jumlah_Nasgor*10000) . "</td></tr>";
-                       } ?>
-                    <?php if(isset($jumlah_tempe)&&$jumlah_tempe!=""&&$jumlah_tempe!=0){ 
-                    echo "<tr><td>Tempe</td><td> $jumlah_tempe </td><td>8000</td><td>"; echo ($jumlah_tempe*8000) . "</td></tr>";
-                     } ?>
-                    <?php if(isset($jumlah_opor)&&$jumlah_opor!=""&&$jumlah_opor!=0){ 
-                    echo "<tr><td>Opor Ayam</td><td>$jumlah_opor</td><td>12000</td><td>"; echo ($jumlah_opor*12000) . " </td></tr>";
-                     } ?>
-                     <?php if(isset($jumlah_Baso)&&$jumlah_Baso!=""&&$jumlah_Baso!=0){ 
-                    echo "<tr><td>Bakso Moo</td><td>$jumlah_Baso</td><td>30000</td><td>"; echo ($jumlah_Baso*30000) . " </td></tr>";
-                     } ?>
-                     <?php if(isset($jumlah_Jamur)&&$jumlah_Jamur!=""&&$jumlah_Jamur!=0){ 
-                    echo "<tr><td>Oseng Jamur</td><td>$jumlah_Jamur</td><td>15000</td><td>"; echo ($jumlah_Jamur*15000) . " </td></tr>";
-                     } ?>
-                     <?php if(isset($jumlah_Kikil)&&$jumlah_Kikil!=""&&$jumlah_Kikil!=0){ 
-                    echo "<tr><td>Kikil Cabe Ijo</td><td>$jumlah_Kikil</td><td>25000</td><td>"; echo ($jumlah_Kikil*25000) . " </td></tr>";
-                     } ?>
+                     
                   </table>
                 </div>
                 </ul>
@@ -198,26 +173,6 @@
 
 
 <script>
-function Nasi(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Nasi Goreng Lengkap dengan potongan sosis dan sayuran : Harga per porsi adalah 10000 rupiah", "Indonesian Female");
-}
-function Opor(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Opor ayam dengan rasa asli Indonesia : Harga per porsi adalah 12000 rupiah","Indonesian Female");
-}
-function Tempe(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("8 Deretan Tempe goreng garing renyah : Harga per porsi adalah 8000 rupiah","Indonesian Female");
-}
-function Baso(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Bakso Mu  : Bakso dari daging sapi kualitas terbaik dari Australia : Harga per porsi adalah 30000 rupiah","Indonesian Female");
-}
-function Jamur(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Oseng Jamur : terbuat dari jamur segar pilihan petani indonesia : Harga per porsi adalah 15000 rupiah","Indonesian Female");
-}
 function Kikil(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Kikil Cabe Ijo : Kikil kulit sapi Australia dengan cabai pilihan : Harga per porsi adalah 25000 rupiah","Indonesian Female")

@@ -11,16 +11,72 @@
                                 </h4>
                                 <p style="color:#FFF" ><?php echo $food['keterangan']?></p>
                                 <p style="color:#FFF" >Waktu saji : <?php echo $food['time']?></p> 
-                                 <input style="width:20%" type="number" name="porsi" min="0" /> <b style="text-align:center; color:#FFF;">Porsi</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                 <button  style="background-color: #FFF; border-color: #FF473A; align-content: right; "class="btn btn-default btn-sm" type="button" class="enjoy-css"  data-toggle="modal" data-target= "#modalOrder" aria-haspopup="true" aria-expanded="false" onclick="addtocart();" ><b style="color:#F22C1F">Add To Cart</b> </button>
+                                <input type="hidden" value="<?php echo $food['id']?>" id="id"/> 
+                                 <input type="hidden" value="<?php echo $food['nama']?>" id="nama"/> 
+                                 <input type="hidden" value="<?php echo $food['harga']?>" id="price"/>
+                                 <input style="width:20%" type="number" name="porsi" min="0" id="qty"/> <b style="text-align:center; color:#FFF;">Porsi</b>
+                                
+                                 <button  style="background-color: #FFF; border-color: #FF473A; align-content: right; "class="btn btn-default btn-sm" type="button" class="enjoy-css"  data-toggle="modal" data-target= "#modalOrder" aria-haspopup="true" aria-expanded="false" onclick="addCart();" ><b style="color:#F22C1F">Add To Cart</b> </button>
                             </div>
                         </div>
                     </div>
       <?php } ?>
   </div>
-                  
+          <table border="1">
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Qty</th>
+         <th>harga</th>
+      </tr>
+      <tbody class="isi">
+      
+        <?php
+        $no = 0;
+        foreach ($this->cart->contents() as $key):
+        ?>
+        <tr>
+          <td><?php echo $no;?></td>
+          <td><?php echo $key['nama'];?></td>
+          <td><?php echo $key['qty'];?></td>
+          <td><?php echo $key['price'];?></td>
+        </tr>
+        <?php
+        $no++;
+        endforeach;
+        ?>
+      
+      </tbody>
+    </table>        
   
-    
+    <!-- jQuery 2.1.4 -->
+    <script src="<?php echo base_url('assets/jQuery/jQuery-2.1.4.min.js');?>"></script>
+
+      <script type="text/javascript">
+
+        function addCart(){
+          var id = $("#id").val();
+          var nama = $("#nama").val();
+          var qty = $("#qty").val();
+           var price = $("#price").val();
+
+          $.post("<?php echo site_url('web/addCart'); ?>", {id:id, namaMakanan: nama, qty: qty, price: price}, function(result){
+                if(result){
+                  $(".isi").append("<tr><td>"+id+"</td><td>"+nama+"</td><td>"+qty+"</td></tr>"+qty+"</td></tr>");
+                  alert("Berhasil!");
+                  id++;
+                }else{
+                  alert("Sorry!");
+                }
+            }).error(function(err){
+
+            }); 
+        }
+        
+
+      </script>
+
+
     <div class="modal fade bs-example-modal-lg" data-backdrop="" id="modalOrder" tabindex="-1" role="dialog" aria-labelledby="labelKategori">
                               
                 <div class="modal-dialog" style="margin-top: 100px;" role="document">
@@ -46,7 +102,8 @@
      </div>
      <div class="modal fade bs-example-modal-lg" data-backdrop="" id="modalProg" tabindex="-1" role="dialog" aria-labelledby="labelKategori">
                               
-                <div class="modal-dialog" style="margin-top: 100px;" role="document">
+                <div class="modal-dialog" style="margin-t
+                op: 100px;" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close"  data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
