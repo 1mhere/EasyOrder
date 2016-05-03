@@ -11,15 +11,9 @@
                                 </h4>
                                 <p style="color:#FFF" ><?php echo $food['keterangan']?></p>
                                 <p style="color:#FFF" >Waktu saji : <?php echo $food['time']?></p> 
-                                <input style="width:20%" type="number" name="porsi" min="0" /> <p style="color:#FFF">Porsi</p>
-                                <!-- <?php 
-                                    // $nama=$food['nama'];
-                                    // $bayar=$food['harga']*$porsi;
-                                 ?>  -->
+                                 <input style="width:20%" type="number" name="porsi" min="0" /> <b style="text-align:center; color:#FFF;">Porsi</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                 <button  style="background-color: #FFF; border-color: #FF473A; align-content: right; "class="btn btn-default btn-sm" type="button" class="enjoy-css"  data-toggle="modal" data-target= "#modalOrder" aria-haspopup="true" aria-expanded="false" onclick="addtocart();" ><b style="color:#F22C1F">Add To Cart</b> </button>
                             </div>
-                                   <center>
-                                        <button  style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"class="btn btn-primary btn-lg" type="button" class="enjoy-css"  data-toggle="modal" data-target= "#modalOrder" aria-haspopup="true" aria-expanded="false" onclick="addtocart();"> Add To Cart </button>
-                                  </center>
                         </div>
                     </div>
       <?php } ?>
