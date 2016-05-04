@@ -25,35 +25,6 @@
                     </div>
       <?php } ?>
   </div>
-          <table border="1">
-      <tr>
-        <th>No</th>
-        <th>Nama</th>
-        <th>Qty</th>
-         <th>harga</th>
-      </tr>
-      <tbody class="isi">
-      
-        <?php
-        $no = 0;
-        $total=0;
-        foreach ($this->cart->contents() as $key):
-        ?>
-        <tr>
-          <td><?php echo $no;?></td>
-          <td><?php echo $key['name'];?></td>
-          <td><?php echo $key['qty'];?></td>
-          <td><?php echo $key['qty']*$key['price'];?></td>
-        </tr>
-        <?php
-        $total+=$key['qty']*$key['price'];
-        $no++;
-        endforeach;
-        echo $total;
-        ?>
-      
-      </tbody>
-    </table>        
   
     <!-- jQuery 2.1.4 -->
 
