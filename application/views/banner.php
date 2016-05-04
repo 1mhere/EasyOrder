@@ -15,7 +15,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo base_url()."assets/";?>image/banner3.png" alt="">
+                                    <img class="slide-image" src="<?php echo base_url()."assets/";?>image/banner3.png" alt="" onclick="monitor();">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

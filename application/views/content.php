@@ -4,7 +4,10 @@
       ?>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div style="background-color: #F22C1F; border-color: #FF473A" class="thumbnail">
-                            <img src="<?php echo base_url()."assets/";?>image/<?php echo $food['gambar']?>" alt="" onclick="Nasi();"  >
+                        <?php 
+                                $ket=$food['keterangan'];
+                          ?>
+                            <img src="<?php echo base_url()."assets/";?>image/<?php echo $food['gambar']?>" alt="" onclick="keterangan(<?php echo $ket ?>);"  >
                             <div class="caption">
                               <?php 
                                 $id=$food['id'];
