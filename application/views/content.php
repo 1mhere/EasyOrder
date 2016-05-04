@@ -78,7 +78,7 @@
                                           <td><?php echo $no;?></td>
                                           <td><?php echo $key['name'];?></td>
                                           <td><?php echo $key['qty'];?></td>
-                                           <span class="label label-default">Proses</span>
+                                          <td><span class="label label-default">Proses</span></td>
                                         </tr>
                                         <?php
                                         $total+=$key['qty']*$key['price'];
