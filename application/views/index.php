@@ -142,7 +142,7 @@
                           <td><?php echo $no;?></td>
                           <td><?php echo $key['name'];?></td>
                           <td><?php echo $key['qty'];?></td>
-                          <td><?php echo $key['qty'];?></td>
+                          <td><?php echo $key['price'];?></td>
                           <td><?php echo $key['qty']*$key['price'];?></td>
                         </tr>
                         <?php
