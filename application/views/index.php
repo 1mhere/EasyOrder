@@ -49,7 +49,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div style="margin-top:10px;text-align:right;">
-          <a href="#" data-toggle="modal" data-target= "#modalProg" onclick="antri();">
+          <a href="#" data-toggle="modal" data-target= "#modalProg" onclick="hasil();">
               <i  aria-haspopup="true" aria-expanded="false" style="color:#E1F438; font-size:30px;"  class="fa fa-spinner"></i>
              </a>&nbsp&nbsp&nbsp&nbsp
              <a href="#" data-toggle="modal" data-target= "#modalChart" onclick="hasil();">
@@ -184,14 +184,6 @@ function hasil(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Berikut Summary Transaksi Anda. <?php echo "Total Tagihan Anda adalah ".$terbilang1." Rupiah"?>. Silahkan Masukkan Nomor meja Anda ", "Indonesian Female" );
 }
-function keterangan(ket){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("<?php echo $ket ?>", "Indonesian Female" );
-}
-function antri(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Berikut Antrian pesanan dari semua konsumer saat ini, Anda bisa melihat status pesanan Anda.", "Indonesian Female" );
-}
 function hearit(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Just Hear it, Anda tidak perlu membacanya , dengarkan saja mesin membacakannya untuk anda", "Indonesian Female");
@@ -199,10 +191,6 @@ function hearit(){
 function clickit(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Just Click it, Tidak perlu menulis ataupun mengatakan apapun yang ingin anda pesan, cukup dengan klik di pilihan anda","Indonesian Female");
-} 
-function monitor(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Monitor your order status, ketahui status pesanan kamu sehingga kamu mengetahui kapan pesanan mu akan datang","Indonesian Female");
 } 
 function close(){
   responsiveVoice.cancel();
