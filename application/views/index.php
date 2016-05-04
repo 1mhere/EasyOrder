@@ -132,15 +132,16 @@
                   <!-- Table -->
                   <table class="table">
                   
-                     <tr><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Harga@(Rp)</b></td><td><b>Subtotal(Rp)</b></td></tr>
+                     <tr><td><b>No</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Harga@(Rp)</b></td><td><b>Subtotal(Rp)</b></td></tr>
                       <?php
-                        $no = 0;
+                        $no = 1;
                         $total=0;
                         foreach ($this->cart->contents() as $key):
                         ?>
                         <tr>
                           <td><?php echo $no;?></td>
                           <td><?php echo $key['name'];?></td>
+                          <td><?php echo $key['qty'];?></td>
                           <td><?php echo $key['qty'];?></td>
                           <td><?php echo $key['qty']*$key['price'];?></td>
                         </tr>
