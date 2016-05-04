@@ -49,7 +49,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div style="margin-top:10px;text-align:right;">
-          <a href="#" data-toggle="modal" data-target= "#modalProg" onclick="antri();">
+          <a href="#" data-toggle="modal" data-target= "#modalProg" onclick="hasil();">
               <i  aria-haspopup="true" aria-expanded="false" style="color:#E1F438; font-size:30px;"  class="fa fa-spinner"></i>
              </a>&nbsp&nbsp&nbsp&nbsp
              <a href="#" data-toggle="modal" data-target= "#modalChart" onclick="hasil();">
@@ -114,11 +114,11 @@
   <div class="modal fade bs-example-modal-lg" data-backdrop="" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="labealKategori">
     <div class="modal-dialog" style="margin-top: 100px;" role="document">
       <div class="modal-content">
-        <div class="modal-header"
+        <div class="modal-header">
           <button type="button" class="close"  data-dismiss="modal" aria-label="Close" id="klos">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="labelKategori"EasyOrder</h4>
+          <h4 class="modal-title" id="labelKategori">EasyOrder</h4>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -184,14 +184,6 @@ function hasil(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Berikut Summary Transaksi Anda. <?php echo "Total Tagihan Anda adalah ".$terbilang1." Rupiah"?>. Silahkan Masukkan Nomor meja Anda ", "Indonesian Female" );
 }
-function antri(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Berikut daftar status order semua pelanggan saat ini ", "Indonesian Female" );
-}
-function keterangan(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak(" <?php echo $food['keterangan'];?>. Silahkan Masukkan Nomor meja Anda ", "Indonesian Female" );
-}
 function hearit(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Just Hear it, Anda tidak perlu membacanya , dengarkan saja mesin membacakannya untuk anda", "Indonesian Female");
@@ -199,14 +191,6 @@ function hearit(){
 function clickit(){
   responsiveVoice.cancel();
   responsiveVoice.speak("Just Click it, Tidak perlu menulis ataupun mengatakan apapun yang ingin anda pesan, cukup dengan klik di pilihan anda","Indonesian Female");
-} 
-function monitor(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Monitor Your Order Status, Ketahui status pesanan kamu sehinga kamu bisa mengetahu kapan pesananmu akan datang. ","Indonesian Female");
-} 
-function greet(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Selamat Datang di Easy Order ","Indonesian Female");
 } 
 function close(){
   responsiveVoice.cancel();
