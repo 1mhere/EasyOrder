@@ -70,7 +70,7 @@
                                     
                                        <tr><td><b>No</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
                                        <?php
-                                        $no =td><b>Makanan</b></td> 0;
+                                        $no =0;
                                         $total=0;
                                         foreach ($this->cart->contents() as $key):
                                         ?>
