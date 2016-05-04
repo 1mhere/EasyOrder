@@ -81,7 +81,6 @@
                                           <td><span class="label label-default">Proses</span></td>
                                         </tr>
                                         <?php
-                                        $total+=$key['qty']*$key['price'];
                                         endforeach;
                                       ?>
                                      <!--   <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">

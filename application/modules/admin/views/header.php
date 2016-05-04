@@ -25,7 +25,7 @@
                   <!-- User image -->
                   <li class="user-header">
                     <img src="<?=base_url("assets/dist/img/avatar5.png")?>"class="img-circle" alt="User Image">
-                    Administrator
+                    Administrator <br>
                     <small>Easy Order Restaurant</small>
                   </li>
                   <!-- Menu Footer-->
