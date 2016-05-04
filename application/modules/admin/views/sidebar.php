@@ -14,7 +14,7 @@
           <!-- search form -->
           <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search...">
+              <!-- <input type="text" name="q" class="form-control" placeholder="Search..."> -->
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
@@ -44,10 +44,10 @@
                 <i class="fa fa-edit"></i> <span>Update Menu</span>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="<?=base_url("admin/mailbox")?>">
                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
                 <small class="label pull-right bg-yellow">12</small>
               </a>
-            </li>
+            </li> -->
    </aside>

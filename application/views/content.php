@@ -68,21 +68,20 @@
                                     <!-- Table -->
                                     <table class="table">
                                     
-                                       <tr><td><b>No</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
+                                       <tr><td><b>No</b></td><td><b>No</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
                                        <?php
-                                        $no =0;
-                                        $total=0;
+                                        $no =1;
                                         foreach ($this->cart->contents() as $key):
                                         ?>
                                         <tr>
                                           <td><?php echo $no;?></td>
+                                          <td><?php echo $key['id'];?></td>
                                           <td><?php echo $key['name'];?></td>
                                           <td><?php echo $key['qty'];?></td>
                                           <td><span class="label label-default">Proses</span></td>
                                         </tr>
                                         <?php
                                         $total+=$key['qty']*$key['price'];
-                                        $no++;
                                         endforeach;
                                       ?>
                                      <!--   <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">
