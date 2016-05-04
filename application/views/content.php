@@ -26,8 +26,9 @@
       <?php } ?>
   </div>
   
-    <!-- jQuery 2.1.4 -->
 
+    <!-- jQuery -->
+<script src="jquery-1.12.3.min.js" type="text/javascript"> </script>
       <script type="text/javascript">
 
         function addCart(id,nama,qty,price){
@@ -67,37 +68,39 @@
                                     <!-- Table -->
                                     <table class="table">
                                     
-                                       <tr><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
-                                       <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">
-                                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                                  <span class="sr-only">100% Complete</span>
-                                                </div>
+                                       <tr><td><b>No</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
+                                       <?php
+                                        $no =td><b>Makanan</b></td> 0;
+                                        $total=0;
+                                        foreach ($this->cart->contents() as $key):
+                                        ?>
+                                        <tr>
+                                          <td><?php echo $no;?></td>
+                                          <td><?php echo $key['name'];?></td>
+                                          <td><?php echo $key['qty'];?></td>
+                                           <span class="label label-default">Proses</span>
+                                        </tr>
+                                        <?php
+                                        $total+=$key['qty']*$key['price'];
+                                        $no++;
+                                        endforeach;
+                                      ?>
+                                     <!--   <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">
+                                                <span class="label label-warning">Pending</span>
                                               </div></td></tr>
                                        <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">
-                                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                  <span class="sr-only">80% Complete</span>
-                                                </div>
+                                              
                                               </div></td></tr>
                                        <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">
-                                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                                  <span class="sr-only">0% Complete</span>
-                                                </div>
+                                                <span class="label label-success">Done</span>
                                               </div></td></tr>
                                        <tr><td>Makanan</td><td>Porsi</td><td><div class="progress">
-                                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                                  <span class="sr-only">70% Complete</span>
-                                                </div>
-                                              </div></td></tr>
+                                                <span class="label label-default">Done</span>
+                                              </div></td></tr> -->
 
                                     </table>
                                   </div>
                              </ul>
-                                    <span class="label label-default">Default</span>
-                                    <span class="label label-primary">Primary</span>
-                                    <span class="label label-success">Success</span>
-                                    <span class="label label-info">Info</span>
-                                    <span class="label label-warning">Warning</span>
-                                    <span class="label label-danger">Danger</span>
                         </div>
                       </div>
                     </div>
