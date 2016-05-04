@@ -49,7 +49,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div style="margin-top:10px;text-align:right;">
-          <a href="#" data-toggle="modal" data-target= "#modalProg" onclick="hasil();">
+          <a href="#" data-toggle="modal" data-target= "#modalProg">
               <i  aria-haspopup="true" aria-expanded="false" style="color:#E1F438; font-size:30px;"  class="fa fa-spinner"></i>
              </a>&nbsp&nbsp&nbsp&nbsp
              <a href="#" data-toggle="modal" data-target= "#modalChart" onclick="hasil();">
