@@ -44,6 +44,37 @@ class Web extends CI_Controller {
 
 		echo json_encode($json);
 	}
+
+	public function checkout(){
+		if($this->input->post()){
+		foreach ($this->cart->contents() as $key) {
+			$data = array(
+           'meja'	 => $this->input->post("meja"),
+           'nama'    => $key['name'],
+           'jumlah'  => $key['qty'],
+           'bayar'   => $key['price'],
+           
+        	);
+			$res = $this->db->insert('order',$data);
+		}
+		$this->cart->destroy();
+		}
+	}
+
+	public function checkout1(){
+		foreach ($this->cart->contents() as $key) {
+			$data = array(
+           'meja'	 => 1,//$this->input->post("meja"),
+           'nama'    => $key['name'],
+           'jumlah'  => $key['qty'],
+           'bayar'   => $key['price'],
+           
+        	);
+
+			$res = $this->db->insert('order',$data);
+		}
+		
+	}
 	public function kategori($id){
 		$cek= $this ->mymodel->GetKategori("where kode_kategori = '$id' ");
 		if($cek->num_rows()>0){

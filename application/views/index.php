@@ -118,7 +118,7 @@
           <button type="button" class="close"  data-dismiss="modal" aria-label="Close" id="klos">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="labelKategori">Pesan Makanan</h4>
+          <h4 class="modal-title" id="labelKategori">EasyOrder</h4>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -128,20 +128,31 @@
                <div class="panel panel-default">
                 <!-- Default panel contents -->
                   <div style="background-color: #F22C1F; border-color: #FF473A;" class="panel-heading"><h4 style="color: #E1F438;">Summary</h4></div>
-                  <?php
-                  @$jumlah_Kikil = $_GET['porsi'];
-                   ?>
-                  
                   
                   <!-- Table -->
                   <table class="table">
                   
                      <tr><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Harga@(Rp)</b></td><td><b>Subtotal(Rp)</b></td></tr>
-                     
+                      <?php
+                        $no = 0;
+                        $total=0;
+                        foreach ($this->cart->contents() as $key):
+                        ?>
+                        <tr>
+                          <td><?php echo $no;?></td>
+                          <td><?php echo $key['name'];?></td>
+                          <td><?php echo $key['qty'];?></td>
+                          <td><?php echo $key['qty']*$key['price'];?></td>
+                        </tr>
+                        <?php
+                        $total+=$key['qty']*$key['price'];
+                        $no++;
+                        endforeach;
+                      ?>
                   </table>
                 </div>
                 </ul>
-                <div class="alert alert-warning" role="alert">Total Bayar : <?php $total = ($jumlah_Nasgor*10000)+($jumlah_tempe*8000)+($jumlah_opor*12000)+($jumlah_Baso*30000)+($jumlah_Jamur*15000)+($jumlah_Kikil*25000); echo $total . " Rupiah" ;
+                <div class="alert alert-warning" role="alert">Total Bayar : <?php echo $total . " Rupiah" ;
                     require('moneyFormat.php');
                                 echo "<br>";
                                 $moneyFormat = new moneyFormat();
@@ -151,19 +162,9 @@
                                 /* Format Terbilang*/
                                 $terbilang1 = $moneyFormat->terbilang($angka);
                                 echo "Terbilang &nbsp&nbsp&nbsp: ".$terbilang1." Rupiah";
-                                ?>
+                                ?> 
                 </div>
-                <div class="alert alert-info" role="alert">Saldo Anda(Rp)  &nbsp: <?php echo $pulsa - $total;  
-                            echo "<br>";
-                            $moneyFormat = new moneyFormat();
-
-                            $angka = $pulsa - $total;
-
-                            /* Format Terbilang*/
-                            $terbilang2 = $moneyFormat->terbilang($angka);
-                            echo "Terbilang &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: ".$terbilang2." Rupiah";
-                            ?></div>
-                
+                <br> Nomor Meja : <input type="number" name="meja">
             </div>
           </div>
         </div>
@@ -173,14 +174,6 @@
 
 
 <script>
-function Kikil(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Kikil Cabe Ijo : Kikil kulit sapi Australia dengan cabai pilihan : Harga per porsi adalah 25000 rupiah","Indonesian Female")
-}
-function addtocart(){
-  responsiveVoice.cancel();
-  responsiveVoice.speak("Apakah anda yakin ?","Indonesian Female");
-}
 function ya(){
   responsiveVoice.speak("Ya", "Indonesian Female");
 }
@@ -188,29 +181,8 @@ function tidak(){
   responsiveVoice.speak("Tidak","Indonesian Female");
 }
 function hasil(){
-  var nasgor = '<?php 
-   if(isset($jumlah_Nasgor)&&$jumlah_Nasgor!=""){
-    echo " Anda Memesan Nasi Goreng sejumlah :".$jumlah_Nasgor."porsi : dengan harga per porsinya 10000 Rupiah, total keseluruhan adalah".$jumlah_Nasgor*10000 . "rupiah : ";
-        } else echo "" ?>';
- var tempe = ' <?php if(isset($jumlah_tempe)&&$jumlah_tempe!=""){ 
-          echo " Anda Memesan Tempe sejumlah :".$jumlah_tempe."porsi  : dengan harga per porsinya 8000 Rupiah, total keseluruhan adalah".$jumlah_tempe*8000 . "rupiah : " ;
-        } else echo "" ?>';
- var opor = '<?php if(isset($jumlah_opor)&&$jumlah_opor!=""){ 
-          echo " Anda Memesan Opor Ayam sejumlah :".$jumlah_opor."porsi : dengan harga per porsinya 12000 Rupiah, total keseluruhan adalah".$jumlah_opor*12000 . "rupiah : ";
-        } else echo "" ?>';
- var baso = '<?php if(isset($jumlah_Baso)&&$jumlah_Baso!=""){ 
-          echo " Anda Memesan Bakso Mu sejumlah :".$jumlah_Baso."porsi : dengan harga per porsinya 30000 Rupiah, total keseluruhan adalah".$jumlah_Baso*30000 . "rupiah : ";
-        } else echo "" ?>';
- var jamur =  '<?php if(isset($jumlah_Jamur)&&$jumlah_Jamur!=""){ 
-          echo " Anda Memesan Oseng Jamur sejumlah :".$jumlah_Jamur."porsi  : dengan harga per porsinya 15000 Rupiah, total keseluruhan adalah".$jumlah_Jamur*15000 . "rupiah : " ;
-        } else echo "" ?>';
- var kikil = '<?php if(isset($jumlah_Kikil)&&$jumlah_Kikil!=""){ 
-          echo " Anda Memesan Kikil Cabe Ijo sejumlah :".$jumlah_Kikil."porsi : dengan harga per porsinya 25000 Rupiah, total keseluruhan adalah".$jumlah_opor*25000 . "rupiah : ";
-        } else echo "" ?>';
- var hasil = '<?php if ($total!=0)echo "Jadi Total keseluruhan pemesanan Anda adalah ".$terbilang1 . "Rupiah : "; ?>';
- var saldo = '<?php echo "Sisa saldo anda adalah".$terbilang2 . "Rupiah"; ?>';
   responsiveVoice.cancel();
-  responsiveVoice.speak(nasgor + tempe + opor + baso + jamur + kikil + hasil + saldo, "Indonesian Female" );
+  responsiveVoice.speak("Berikut Summary Transaksi Anda. <?php echo "Total Tagihan Anda adalah ".$terbilang1." Rupiah"?>. Silahkan Masukkan Nomor meja Anda ", "Indonesian Female" );
 }
 function hearit(){
   responsiveVoice.cancel();
@@ -230,10 +202,30 @@ $('#klos').on('click', function(){
         <div class="modal-footer">
           <form action="homepage.php">
             <button type="submit" data-dismiss="modal" class="btn btn-default">CANCEL</button>
-            <button style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"type="button" class="btn btn-primary"  data-dismiss="modal" data-target= "#notif" ?>Order</button>
+            <button style="background-color: #F22C1F; border-color: #FF473A color : #E1F438;"type="button" class="btn btn-primary"  data-dismiss="modal" data-target= "#notif" onclick="checkout();">Order</button>
           </form>
         </div>
       </div>
+
+       <script type="text/javascript">
+
+        function checkout(meja){
+          $.post("<?php echo site_url('web/checkout'); ?>", {meja:meja}, function(result){
+                if(result){
+                  // $(".isi").append("<tr><td>"+id+"</td><td>"+nama+"</td><td>"+qty+"</td><td>"+qty*price+"</td></tr>");
+                  alert("Berhasil!");
+                  id++;
+                }else{
+                  alert("Sorry!");
+                }
+            }).error(function(err){
+                alert(err);
+            }); 
+        }
+        
+
+      </script>
+
     </div>
 </div>
 </html>
