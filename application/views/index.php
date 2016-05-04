@@ -26,7 +26,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href='https://drive.google.com/open?id=0B0Yf4HLqmZAMdkh0STF4MWl0VXM' rel='icon' type='image/png'/>
 </head>
 
 <body>
