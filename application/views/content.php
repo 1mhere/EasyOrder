@@ -55,7 +55,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close"  data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4  class="modal-title" id="labelKategori">Pesan Makanan</h4>
+                      <h4  class="modal-title" id="labelKategori">EasyOrder</h4>
                     </div>
                     <div class="modal-body">
                       <div class="row">
@@ -68,7 +68,7 @@
                                     <!-- Table -->
                                     <table class="table">
                                     
-                                       <tr><td><b>No</b></td><td><b>No</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
+                                       <tr><td><b>No</b></td><td><b>Nomor Meja</b></td><td><b>Makanan</b></td><td><b>Porsi</b></td><td><b>Status</b></td></tr>
                                        <?php
                                         $no =1;
                                         foreach ($this->cart->contents() as $key):
