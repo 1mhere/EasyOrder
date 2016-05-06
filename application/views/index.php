@@ -42,8 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button> -->
-                <a href="
-                http://localhost:1717/easyorder/" style="color : #E1F438; " class="navbar-brand" >Easy Order</a>
+                <a href="<?php echo base_url("");?>" style="color : #E1F438; " class="navbar-brand" >Easy Order</a>
                 <a href="<?= site_url('admin');?>" class="navbar-brand" >Login as Admin</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
